@@ -5,6 +5,7 @@ Production RAG (Retrieval-Augmented Generation) system for domain-specific docum
 Powered by **Google Gemini** for generation and evaluation.
 
 ## Architecture
+![system architecture](https://github.com/ndhanvina/DocuMind/blob/main/system%20architecture.png)
 
 ```
 User Question
