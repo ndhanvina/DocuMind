@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "documind"
+version = "0.1.0"
+description = "Production RAG system with hybrid retrieval, cross-encoder reranking, and citation enforcement"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn[standard]>=0.34,<1",
+    "pydantic>=2.10,<3",
+    "pydantic-settings>=2.7,<3",
+    "google-genai>=1.0",
+    "chromadb>=1.0",
+    "sentence-transformers>=3.4,<4",
+    "rank-bm25>=0.2.2,<1",
+    "pymupdf>=1.25,<2",
+    "python-dotenv>=1.0,<2",
+    "python-multipart>=0.0.18",
+    "structlog>=24.4,<26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-asyncio>=0.25,<1",
+    "httpx>=0.28,<1",
+    "ruff>=0.9,<1",
+    "mypy>=1.14,<2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rag", "eval"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true

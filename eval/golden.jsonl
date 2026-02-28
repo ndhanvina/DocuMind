@@ -1,0 +1,3 @@
+{"question": "What is the authentication mechanism used in the API?", "expected_answer": "The API uses JWT-based authentication with refresh tokens.", "expected_sources": ["docs/api-reference.md"], "tags": ["auth", "api"]}
+{"question": "How do I configure rate limiting?", "expected_answer": "Rate limiting is configured via the RATE_LIMIT_PER_MINUTE environment variable.", "expected_sources": ["docs/configuration.md"], "tags": ["config", "rate-limit"]}
+{"question": "What database migrations are supported?", "expected_answer": "The system supports Alembic migrations for PostgreSQL and SQLite.", "expected_sources": ["docs/database.md"], "tags": ["database", "migrations"]}
